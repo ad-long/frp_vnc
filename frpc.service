@@ -1,0 +1,12 @@
+[Unit]
+Description=Start frpc at startup.
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/sbin/frp/frpc -c /etc/frp/frpc.ini
+ExecStop=/usr/bin/killall frpc
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,12 @@
+[Unit]
+Description=Start frps at startup.
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/sbin/frp/frps -c /etc/frp/frps.ini
+ExecStop=/usr/bin/killall frps
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
