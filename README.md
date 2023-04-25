@@ -34,3 +34,8 @@ ExecStart=/usr/bin/x11vnc -ncache 10 -forever -display :0 -auth guess -passwd yo
 ``` shell
 sudo bash install_client.sh
 ```
+## close suspend
+``` shell
+sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+systemctl status sleep.target
+```
